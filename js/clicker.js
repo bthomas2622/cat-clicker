@@ -1,9 +1,24 @@
-var Cat = function(number, name){
-    this.number = number;
-    this.name = name;
-    this.count = 0;
+var Cat = function(name, imgsource){
+	this.name = name;
+	this.imgsource = imgsource;
+	this.clickcount = 0;
 };
 
+Cat.prototype.clicked = function() {
+	this.clickcount = this.clickcount + 1;
+	console.log("test");
+};
+
+
+var George = new Cat("George", "kitty1.jpg");
+var Fred = new Cat("Frederick", "kitty2.jpg"); 
+var Wendy = new Cat("Wendy", "kitty3.jpg");
+var Marge = new Cat("Marge", "kitty4.jpg");
+var Gambino = new Cat("Gambino", "kitty5.jpg");
+var cats = new Array(George, Fred, Wendy, Marge, Gambino);
+
+var bob = cats[1].name;
+console.log(bob);
 var numba1count = 0;
 var numba2count = 0;
 var numba3count = 0;
@@ -11,121 +26,113 @@ var numba4count = 0;
 var numba5count = 0; 
 
 $(document).ready(function() {
+
+	for (i = 0; i < cats.length; i++) {
+		var listid = "#numba" + (i + 1);
+		$(listid).replaceWith('<li id=numba' + (i+1) + '>' + cats[i].name + '</li>')
+	};
+
 	$("#numba1").click(function(e) {
-		var cat = new Cat(1, "George");
-		var newcat1 = '<img class="cat1" src="kitty1.jpg" alt="This is a picture of a kitty">';
+		var newcat1 = '<img class="cat1" src=' + cats[0].imgsource +' alt="This is a picture of a kitty">';
 		$(".cat1").replaceWith(newcat1);
-		var newcatname = '<h1 class="catname">George</h1>';
+		var newcatname = '<h1 class="catname">'+ cats[0].name + '</h1>';
 		$(".catname").replaceWith(newcatname);
 
 		var cat1count = '<span class="cat1clicks">%data%</span>';
 		var data = "%data%";
-		var newCount1 = cat1count.replace(data, numba1count);
+		var newCount1 = cat1count.replace(data, cats[0].clickcount);
 		$(".cat1clicks").replaceWith(newCount1);
 		$(".cat1").click(function(e) {
-			numba1count = numba1count + 1;
+			cats[0].clicked(); 
 			var cat1count = '<span class="cat1clicks">%data%</span>';
 			var data = "%data%";
-			var newCount1 = cat1count.replace(data, numba1count);
+			var newCount1 = cat1count.replace(data, cats[0].clickcount);
 			$(".cat1clicks").replaceWith(newCount1);
 		});
 	});
 
 	$("#numba2").click(function(e) {
-		var cat = new Cat(2, "Frederick");
-		var newcat1 = '<img class="cat1" src="kitty2.jpg" alt="This is a picture of a kitty">';
+		var newcat1 = '<img class="cat1" src=' + cats[1].imgsource +' alt="This is a picture of a kitty">';
 		$(".cat1").replaceWith(newcat1);
-		var newcatname = '<h1 class="catname">Frederick</h1>';
+		var newcatname = '<h1 class="catname">'+ cats[1].name + '</h1>';
 		$(".catname").replaceWith(newcatname);
 
 		var cat1count = '<span class="cat1clicks">%data%</span>';
 		var data = "%data%";
-		var newCount1 = cat1count.replace(data, numba2count);
+		var newCount1 = cat1count.replace(data, cats[1].clickcount);
 		$(".cat1clicks").replaceWith(newCount1);
 		$(".cat1").click(function(e) {
-			numba2count = numba2count + 1;
+			cats[1].clicked(); 
 			var cat1count = '<span class="cat1clicks">%data%</span>';
 			var data = "%data%";
-			var newCount1 = cat1count.replace(data, numba2count);
+			var newCount1 = cat1count.replace(data, cats[1].clickcount);
 			$(".cat1clicks").replaceWith(newCount1);
 		});
 	});
 
 	$("#numba3").click(function(e) {
-		var cat = new Cat(3, "Wendy");
-		var newcat1 = '<img class="cat1" src="kitty3.jpg" alt="This is a picture of a kitty">';
+		var newcat1 = '<img class="cat1" src=' + cats[2].imgsource +' alt="This is a picture of a kitty">';
 		$(".cat1").replaceWith(newcat1);
-		var newcatname = '<h1 class="catname">Wendy</h1>';
+		var newcatname = '<h1 class="catname">'+ cats[2].name + '</h1>';
 		$(".catname").replaceWith(newcatname);
 
 		var cat1count = '<span class="cat1clicks">%data%</span>';
 		var data = "%data%";
-		var newCount1 = cat1count.replace(data, numba3count);
+		var newCount1 = cat1count.replace(data, cats[2].clickcount);
 		$(".cat1clicks").replaceWith(newCount1);
 		$(".cat1").click(function(e) {
-			numba3count = numba3count + 1;
+			cats[2].clicked(); 
 			var cat1count = '<span class="cat1clicks">%data%</span>';
 			var data = "%data%";
-			var newCount1 = cat1count.replace(data, numba3count);
+			var newCount1 = cat1count.replace(data, cats[2].clickcount);
 			$(".cat1clicks").replaceWith(newCount1);
 		});
 	});
 
 	$("#numba4").click(function(e) {
-		var cat = new Cat(3, "Marge");
-		var newcat1 = '<img class="cat1" src="kitty4.jpg" alt="This is a picture of a kitty">';
+		var newcat1 = '<img class="cat1" src=' + cats[3].imgsource +' alt="This is a picture of a kitty">';
 		$(".cat1").replaceWith(newcat1);
-		var newcatname = '<h1 class="catname">Marge</h1>';
+		var newcatname = '<h1 class="catname">'+ cats[3].name + '</h1>';
 		$(".catname").replaceWith(newcatname);
 
 		var cat1count = '<span class="cat1clicks">%data%</span>';
 		var data = "%data%";
-		var newCount1 = cat1count.replace(data, numba4count);
+		var newCount1 = cat1count.replace(data, cats[3].clickcount);
 		$(".cat1clicks").replaceWith(newCount1);
 		$(".cat1").click(function(e) {
-			numba4count = numba4count + 1;
+			cats[3].clicked(); 
 			var cat1count = '<span class="cat1clicks">%data%</span>';
 			var data = "%data%";
-			var newCount1 = cat1count.replace(data, numba4count);
+			var newCount1 = cat1count.replace(data, cats[3].clickcount);
 			$(".cat1clicks").replaceWith(newCount1);
 		});
 	});
 
 	$("#numba5").click(function(e) {
-		var cat = new Cat(3, "Gambino");
-		var newcat1 = '<img class="cat1" src="kitty5.jpg" alt="This is a picture of a kitty">';
+		var newcat1 = '<img class="cat1" src=' + cats[4].imgsource +' alt="This is a picture of a kitty">';
 		$(".cat1").replaceWith(newcat1);
-		var newcatname = '<h1 class="catname">Gambino</h1>';
+		var newcatname = '<h1 class="catname">'+ cats[4].name + '</h1>';
 		$(".catname").replaceWith(newcatname);
 
 		var cat1count = '<span class="cat1clicks">%data%</span>';
 		var data = "%data%";
-		var newCount1 = cat1count.replace(data, numba5count);
+		var newCount1 = cat1count.replace(data, cats[4].clickcount);
 		$(".cat1clicks").replaceWith(newCount1);
 		$(".cat1").click(function(e) {
-			numba5count = numba5count + 1;
+			cats[4].clicked(); 
 			var cat1count = '<span class="cat1clicks">%data%</span>';
 			var data = "%data%";
-			var newCount1 = cat1count.replace(data, numba5count);
+			var newCount1 = cat1count.replace(data, cats[4].clickcount);
 			$(".cat1clicks").replaceWith(newCount1);
 		});
 	});
 
 	$(".cat1").click(function(e) {
-		numba1count = numba1count + 1;
+		cats[0].clicked();
+		console.log(cats[0].clickcount);
 		var cat1count = '<span class="cat1clicks">%data%</span>';
 		var data = "%data%";
-		var newCount1 = cat1count.replace(data, numba1count);
+		var newCount1 = cat1count.replace(data, cats[0].clickcount);
 		$(".cat1clicks").replaceWith(newCount1);
 	});
-
-	// var total2 = 0;
-	// $(".cat2").click(function(e) {
-	// 	total2 = total2 + 1;
-	// 	console.log(total2);
-	// 	var cat2count = '<span class="cat2clicks">%data%</span>';
-	// 	var data = "%data%";
-	// 	var newCount2 = cat2count.replace(data, total2);
-	// 	$(".cat2clicks").replaceWith(newCount2);
-	// });
 });
