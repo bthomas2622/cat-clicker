@@ -4,7 +4,11 @@ var Cat = function(number, name){
     this.count = 0;
 };
 
-var total1 = 0;
+var numba1count = 0;
+var numba2count = 0;
+var numba3count = 0;
+var numba4count = 0;
+var numba5count = 0; 
 
 $(document).ready(function() {
 	$("#numba1").click(function(e) {
@@ -14,17 +18,15 @@ $(document).ready(function() {
 		var newcatname = '<h1 class="catname">George</h1>';
 		$(".catname").replaceWith(newcatname);
 
-		total1 = 0;
 		var cat1count = '<span class="cat1clicks">%data%</span>';
 		var data = "%data%";
-		var newCount1 = cat1count.replace(data, total1);
+		var newCount1 = cat1count.replace(data, numba1count);
 		$(".cat1clicks").replaceWith(newCount1);
 		$(".cat1").click(function(e) {
-			total1 = total1 + 1;
-			console.log(total1);
+			numba1count = numba1count + 1;
 			var cat1count = '<span class="cat1clicks">%data%</span>';
 			var data = "%data%";
-			var newCount1 = cat1count.replace(data, total1);
+			var newCount1 = cat1count.replace(data, numba1count);
 			$(".cat1clicks").replaceWith(newCount1);
 		});
 	});
@@ -36,18 +38,15 @@ $(document).ready(function() {
 		var newcatname = '<h1 class="catname">Frederick</h1>';
 		$(".catname").replaceWith(newcatname);
 
-		total1 = 0;
 		var cat1count = '<span class="cat1clicks">%data%</span>';
 		var data = "%data%";
-		var newCount1 = cat1count.replace(data, total1);
+		var newCount1 = cat1count.replace(data, numba2count);
 		$(".cat1clicks").replaceWith(newCount1);
-		console.log("test");
 		$(".cat1").click(function(e) {
-			total1 = total1 + 1;
-			console.log(total1);
+			numba2count = numba2count + 1;
 			var cat1count = '<span class="cat1clicks">%data%</span>';
 			var data = "%data%";
-			var newCount1 = cat1count.replace(data, total1);
+			var newCount1 = cat1count.replace(data, numba2count);
 			$(".cat1clicks").replaceWith(newCount1);
 		});
 	});
@@ -59,18 +58,15 @@ $(document).ready(function() {
 		var newcatname = '<h1 class="catname">Wendy</h1>';
 		$(".catname").replaceWith(newcatname);
 
-		total1 = 0;
 		var cat1count = '<span class="cat1clicks">%data%</span>';
 		var data = "%data%";
-		var newCount1 = cat1count.replace(data, total1);
+		var newCount1 = cat1count.replace(data, numba3count);
 		$(".cat1clicks").replaceWith(newCount1);
-		console.log("test");
 		$(".cat1").click(function(e) {
-			total1 = total1 + 1;
-			console.log(total1);
+			numba3count = numba3count + 1;
 			var cat1count = '<span class="cat1clicks">%data%</span>';
 			var data = "%data%";
-			var newCount1 = cat1count.replace(data, total1);
+			var newCount1 = cat1count.replace(data, numba3count);
 			$(".cat1clicks").replaceWith(newCount1);
 		});
 	});
@@ -82,18 +78,15 @@ $(document).ready(function() {
 		var newcatname = '<h1 class="catname">Marge</h1>';
 		$(".catname").replaceWith(newcatname);
 
-		total1 = 0;
 		var cat1count = '<span class="cat1clicks">%data%</span>';
 		var data = "%data%";
-		var newCount1 = cat1count.replace(data, total1);
+		var newCount1 = cat1count.replace(data, numba4count);
 		$(".cat1clicks").replaceWith(newCount1);
-		console.log("test");
 		$(".cat1").click(function(e) {
-			total1 = total1 + 1;
-			console.log(total1);
+			numba4count = numba4count + 1;
 			var cat1count = '<span class="cat1clicks">%data%</span>';
 			var data = "%data%";
-			var newCount1 = cat1count.replace(data, total1);
+			var newCount1 = cat1count.replace(data, numba4count);
 			$(".cat1clicks").replaceWith(newCount1);
 		});
 	});
@@ -105,28 +98,24 @@ $(document).ready(function() {
 		var newcatname = '<h1 class="catname">Gambino</h1>';
 		$(".catname").replaceWith(newcatname);
 
-		total1 = 0;
 		var cat1count = '<span class="cat1clicks">%data%</span>';
 		var data = "%data%";
-		var newCount1 = cat1count.replace(data, total1);
+		var newCount1 = cat1count.replace(data, numba5count);
 		$(".cat1clicks").replaceWith(newCount1);
-		console.log("test");
 		$(".cat1").click(function(e) {
-			total1 = total1 + 1;
-			console.log(total1);
+			numba5count = numba5count + 1;
 			var cat1count = '<span class="cat1clicks">%data%</span>';
 			var data = "%data%";
-			var newCount1 = cat1count.replace(data, total1);
+			var newCount1 = cat1count.replace(data, numba5count);
 			$(".cat1clicks").replaceWith(newCount1);
 		});
 	});
 
 	$(".cat1").click(function(e) {
-		total1 = total1 + 1;
-		console.log(total1);
+		numba1count = numba1count + 1;
 		var cat1count = '<span class="cat1clicks">%data%</span>';
 		var data = "%data%";
-		var newCount1 = cat1count.replace(data, total1);
+		var newCount1 = cat1count.replace(data, numba1count);
 		$(".cat1clicks").replaceWith(newCount1);
 	});
 
